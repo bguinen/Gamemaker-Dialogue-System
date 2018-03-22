@@ -2,7 +2,8 @@ Dialog System with Dynamic Textboxes
 -> Brad Guinen "Shifty"
 -> Bguinen@gmail.com
 
-If you want to this system would work if you want to store more data in the npc character .json
+REMINDER: This system can store more data in the npc files. reference - Tree Diagram
+
 GENERAL JSON SYNTAX	
 	
 I made this note just as a quick guide on how a JSON file is formated to store your dialog trees. 
