@@ -7,19 +7,22 @@ A dialog system that uses JSON objects and Gamemaker data structures to map out 
 It is also set up in a way to allow for further customization. 
 Before doing so, check out the diagrams and [Further Reading](notes/Further Reading.txt) note to make sense of the JSON file structure and how this system uses it:
 
-![Object Structure](Diagrams/Object_Diagram.png?raw=true "Object Structure Diagram")
-
+### Object Structure
 > Outlines the structure of one character's JSON object 
 > and details how data is stored in each of the child objects. 
 > Also covers what data structures are used in the Gamemaker 
 > Project to store respective data. They are referenced by 
-> their in-engine variable names.   
+> their in-engine variable names.  
+![Object Structure](Diagrams/Object_Diagram.png?raw=true "Object Structure Diagram")
 
-![Dialog Tree Structure](Diagrams/Tree_Diagram.png?raw=true "Dialog Tree Diagram")
+
+### Dialog Tree Structure
 > A macro view of how the dialog and response objects are used
 > to navigate a "Dialog Tree". Also included some examples on 
 > how to augment this system for additional functionality.
 > Hopefully this will help you conceptually follow how this system functions.
+![Dialog Tree Structure](Diagrams/Tree_Diagram.png?raw=true "Dialog Tree Diagram")
+
 
 ## Installation
 
