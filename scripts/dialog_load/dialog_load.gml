@@ -1,49 +1,16 @@
-/*
-	**global vars connected to characters should be updated in respective objects**
-		-could have names of vars stored in choice lists [position 2] <-for later
-	
+///@description loads dialog trees for each object from a json file, returns ds_map of dialog
+///@param filename
+/*	
 	**for json layout**
 	**Reference example.json**
-	
-	dialog_load()
-	-Pass in name
-	-open name.json
-	-parse to ds_map
-	-return ds_map
-	
-	
-	dialog_select() / response_select()
-	-Pass in datamap
-	-return ds_list
-	
-	var dialogNext = list[|0];
-	
-	
-	WHAT TO PASS IN
-	-current ds_map dialog/responses
-	-point to corresponding respons/next dialog options
-	-
-	RETURN or DIFF SCRIPT
-	-array of current dialog (updates based on selection)
-	
-	global ds_maps/ds_lists variables in order to access current dialog
-	
-	OBJECTIVES
-	-dialog_select ??copy ds_list[ 2+] to array?? 
-	-
-	- 
-	
-	
-	obj_name = object_get_name()
-	with (obj_npc_parent) {other.myName = "gary"}	
 
+again, this method should not be used in any final productions.
+the json format is great for debugging, creating, and testing this dialog system.
+
+If you don't want players being able to edit and possibly break the dialog trees,
+you should replace this functionality with:
+global.datamap = ds_map_secure_load("NPC_Name_Dialog.bin")
 */
-///@description loads dialog for each object, returns ds_map of dialog
-///@param filename
-///
-
-//replace functionality with
-//global.datamap = ds_map_secure_load("data.bin")
 var file = argument0;
 file += ".json";
 

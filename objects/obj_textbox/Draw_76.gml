@@ -1,22 +1,28 @@
-/*****textwidth should be proportionate to viewport?****
- ************************
- ***dynamic dialog box***
- ************************/
- 
+/// @description Pre-draw measurements
+
 draw_set_font(fn_default);
 //length of current string
-//str = text[|page];
 textLength = string_length(global.dlist[|page]);
 //height for char seperation
 textSep = string_height(global.dlist[|page]);
+
+/* BELOW SIZES THE STRING FOR THE TEXTBOX DIMENSIONS
+-last value in the string_ext() functions will determine how wide/tall your dialog box is
+-Suggest keeping same value for 'w' in both string_width_ext and string_height_ext
+so that the text doesn't extend outside the "Nine slice" textbox draw.
+-The value should be somewhat proportional to your viewport camera dimensions
+*/
+
 //max width in pixels w/line break
-textWidth = string_width_ext(global.dlist[|page], textSep, 300);
+textWidth = string_width_ext(global.dlist[|page], textSep, 300); 
 //height of string w/line break
 textHeight = string_height_ext(global.dlist[|page], textSep, 300);
 //padding around text
 buffer = 20;
 
-//*change x, y origin for style*
+/*
+Edit any of these below to tune the layout of the textbox to your style
+*/
 //extra space between sprite and textbox
 newx = x+buffer/2;
 //place halfway up object

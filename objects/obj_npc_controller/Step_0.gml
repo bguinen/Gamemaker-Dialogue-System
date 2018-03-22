@@ -1,81 +1,26 @@
-/*if place_meeting(x, y, obj_player)
-if(havemet){
-	entry = "d_1_0"
-}*//*
-switch (global.respondEvent) //dialog not occuring
-{ 
-	case false:
-		if (distance_to_object(obj_player) < 40){
-			if(interacting && mouse_check_button_pressed(mb_left)){		
-				global.datamap = dialog_load("example"); //replace with name
+if canInteract { //make sure following checks only run when in range of player
+	if (global.npcDialogEvent = false) { //If not then check everystep for when player clicks on NPC
+			if(canTalk && mouse_check_button_pressed(mb_left)){	
+				/*
+				For final game functionality replace global.datamap = dialog_load();
+					-> global.datamap = ds_map_secure_load("NPC_Name_Dialog.bin");
+			
+				Its easier to test/edit/shape dialog trees using the json format
+				using Gamemaker's ds_map_secure_load/save for anything beyond testing 
+				ensures the players cannot edit and possibly break the system.
+				*/
+				global.currObjectName = objName;
+				global.datamap = dialog_load(myName);
 				dialog_select(entry);
-				havemet = true;			
-				event_user(0);
-				global.respondEvent = true;
+				havemet = true; 
+				// you can change what an NPC says based on if player has interacted with npc
+				// i.e. if havemet = true, entry = d_0_1
+				event_user(0); //creates textbox for dialog
+				global.npcDialogEvent = true; //triggers Dialog event
 			}
-		} else {
-			if (myTextbox !=noone){
-				global.respondEvent = false;	
-				instance_destroy(myTextbox);
-				myTextbox = noone;			
-			}
-		} break;
-	case true:		
-		dialog_select(global.dialogNext)
-		event_user(0);
-		if (distance_to_object(obj_player) > 40) {
-			if (myTextbox !=noone){
-				global.respondEvent = false;	
-				instance_destroy(myTextbox);
-				myTextbox = noone;			
-			}
-		} break;
-}	/*
-	switch(global.respondEvent)
-		{
-			case false:
-			if(interacting && mouse_check_button_pressed(mb_left)){						
-				global.datamap = dialog_load("example"); //replace with name
-				dialog_select(entry);
-				havemet = true;			
-				event_user(0);		
-				global.respondEvent = true;
-			}					
-				break;						
-			case true:
-				dialog_select(global.dialogNext)
-				event_user(0);
-				break;
-		}
-	*/
-
- //vv somewhat stable
-if (distance_to_object(obj_player) < 40){ 
-	if (global.respondEvent = true) {
-		dialog_select(global.dialogNext)
-		event_user(0);
-	} else if(global.respondEvent = false){
-		if(interacting && mouse_check_button_pressed(mb_left)){	
-			//global.datamap = ds_map_secure_load("data.bin")	
-			global.datamap = dialog_load("example"); //replace with name
-			dialog_select(entry);
-			havemet = true;			
-			event_user(0);
-			//global.respondEvent = true;
-			//might have to move out of step					
-		}
-	}
-	
-		
-	} else {
-		//global.respondEvent = false;	
-		if (myTextbox !=noone){
-		global.respondEvent = false;	
-				instance_destroy(myTextbox);
-				myTextbox = noone;
-							
-		}
-	}
-	 
-//thoughts for tomorrow: destroy textbox on timer
-// toggling a canmove variable on player rather than basing off of dialogEvent
+			//checks if current npc is in Dialog/Response event		
+		} else if(global.playerResponseEvent = true && global.currObjectName = objName){
+			dialog_select(global.dialogNext) //loads dialog tree from next dialog pointer
+			event_user(0);//creates new textbox for dialog
+		} else if (global.npcDialogEvent = true) exit;// Do nothing if currently in a dialog event but havent triggered a response event yet.		
+}	 

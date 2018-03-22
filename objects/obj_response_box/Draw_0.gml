@@ -1,10 +1,12 @@
-if hover 
+/// @desc mouse hover effects
+if hover {
+	//draw_set_color(c_red); example hover effect
+	//draw_rectangle(x,y, x+textWidth+textSep, y+textSep,true);
 	draw_set_color(c_blue);
-else if haveselected
+}
+else if haveselected //text is grey if has been previously selected
 	draw_set_color(c_gray);
 else
 	draw_set_color(c_white);
-
-//draw_set_font(fn_default);
-
-draw_text(x, y, "> " + text + " " + p_choice);//draw_text(x+textWidth+5, y, dialog_ptr);
+//draw rlist string
+draw_text(x, y, "> " + text);

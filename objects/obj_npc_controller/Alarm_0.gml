@@ -1,7 +1,5 @@
+/// @description Resets textbox link & Dialog event
 myTextbox = noone;
-
-
-/*
-if(havemet){
-	entry = "d_1_0"
-}
+global.npcDialogEvent = false;
+global.currObjectName = "";
+alarm[0] = -1; //stop alarm counter

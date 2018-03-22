@@ -1,0 +1,31 @@
+{ 
+	"Dialog": 
+	{ 
+		"d_0_0": [ "r_0_0", "Hello There!", "What can i help you with?" ],
+		"d_0_1": [ "r_0_0", "Not really...", "Somethings going on in his life..", "Completely refuses to talk to me about it.", "Any thing else i can help you with?" ],
+		"d_1_0": [ "r_0_1", "Yah that Eric feller is off his rocker!", "talks complete nonsense!", "Other than that pretty calm 'round these parts" ],
+		"d_1_1": [ "r_1_0", "It seems like it!", "But this is a new town,", "Hopefully there will be more settlers soon" ],
+		"d_1_2": [ "exit", "I think so, so much open space ya know!", "Anyway i need to get back to my work", "Thanks for stopping by!" ],
+		"exit" : [ "exit", "Alrighty then", "Don't be a stranger!" ]
+	},
+	"Response": 
+	{ 
+		"r_0_0": 
+		{
+			"c0": [ "exit", "Sorry I have to go",  "false" ],
+			"c1": [ "d_0_1", "Do you know Jerry?",  "false" ],
+			"c2": [ "d_1_0", "Heard any rumors lately?",  "false" ]
+		},
+		"r_0_1":
+		{
+			"c0": [ "exit", "Il go talk to Eric",  "false" ],
+			"c1": [ "exit", "Spooky! well i'll be on my way ",  "false" ],
+			"c2": [ "d_1_1", "So your the only \"normal\" one?",  "false" ]
+		},
+		"r_1_0":
+		{
+			"c0": [ "d_1_2", "Lets hope so!",  "false" ],
+			"c1": [ "exit", "Well, il be leaving now!",  "false" ]			
+		}
+	}
+}

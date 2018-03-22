@@ -1,0 +1,15 @@
+{ 
+	"Dialog": 
+	{ 
+		"d_0_0": [ "exit", "Go Away!" ],
+		"d_0_1": [ "r_0_0", "After some condition has been met", "Jerry might actually say something", "Simply update the entry variable \n in Jerry's object code" ],	
+		"exit" : [ "exit", "Goodbye!" ]
+	},
+	"Response": 
+	{ 
+		"r_0_0": 
+		{
+			"c0": [ "exit", "Exit Conversation",  "false" ]
+		}		
+	}
+}

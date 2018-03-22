@@ -15,3 +15,5 @@ if (!file) {
 	file_text_write_string(file, data);
 }
 file_text_close(file);
+
+//You can use this to save datamaps into json format

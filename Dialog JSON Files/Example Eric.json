@@ -1,0 +1,24 @@
+{ 
+	"Dialog": 
+	{ 
+		"d_0_0": [ "r_0_0", "This is what I say when i first meet you", "this is the second sentence", "Last sentence, should lead to player question" ],
+		"d_0_1": [ "r_0_0", "I can say this later", "But this will map to the same responses as the last dialog" ],
+		"d_0_2": [ "r_0_1", "Because of that answer i'm now saying this", "What do you think?" ],
+		"exit" : [ "exit", "When the key says \"exit\" this will be the last thing an npc says" ]
+	},
+	"Response": 
+	{ 
+		"r_0_0": 
+		{
+			"c0": [ "exit", "Exit Conversation",  "false" ],
+			"c1": [ "d_0_1", "Huh?",  "false" ],
+			"c2": [ "d_0_2", "Go on",  "false" ]
+		},
+		"r_0_1":
+		{
+			"c0": [ "exit", "Oh Neat!",  "false" ],
+			"c1": [ "exit", "How Enlightening",  "false" ],
+			"c2": [ "exit", "Was it worth the pain?",  "false" ]
+		}
+	}
+}

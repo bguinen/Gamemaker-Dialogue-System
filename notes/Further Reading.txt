@@ -1,0 +1,57 @@
+Dialog System with Dynamic Textboxes
+-> Brad Guinen "Shifty"
+-> Bguinen@gmail.com
+
+If you want to this system would work if you want to store more data in the npc character .json
+GENERAL JSON SYNTAX	
+	
+I made this note just as a quick guide on how a JSON file is formated to store your dialog trees. 
+read over this carefully as misplacing a bracket, colon, or comma will break how the JSON is read and will crash the game
+
+For a more in depth and easy to follow coverage on JSON syntax i'd suggest visiting
+ -> www.w3schools.com/js/js_json_intro.asp
+ 
+KEY BASICS:
+	1) Data is stored by key/value pairs, linked by a colon 
+		{ "name":"john" } // One object key = name | value = john
+    2) Data is separated by commas 
+		{ "name":"john" }, { "age":25 } // Two objects "note the last object mentioned DOES NOT have a comma at the end 
+    3) {  } Curly braces reference objects
+    4) [  ] Square brackets reference arrays
+	5) JSON can only hold the following data types
+	    -string
+	    -number
+	    -JSON object
+	    -array
+	    -boolean
+	    -null
+		
+REFERENCING EXAMPLE.JSON
+{ //wrap whole thing in curly brace so that the entire thing can be read as an object to store in ds_map 
+	
+	// The local variable "submap" uses this key to load it's object as another ds_map  
+	"Dialog":  
+	
+	//each key below has an array of strings as its value. Using these keys, their arrays are passed to the "dlist" ds_list
+	{ 
+		"d_0_0": [ "r_0_0", "This is what I say when i first meet you", "this is the second sentence", "Last sentence, should lead to player question" ],
+		"d_0_1": [ "r_0_0", "I can say this later", "But this will map to the same responses as the last dialog" ],
+		"d_0_2": [ "r_0_1", "Because of that answer i'm now saying this", "What do you think?" ],
+		"exit" : [ "exit", "When the key says \"exit\" this will be the last thing an npc says" ]
+	},
+	"Response": 
+	{ 
+		"r_0_0": 
+		{
+			"c0": [ "exit", "Exit Conversation",  "false" ],
+			"c1": [ "d_0_1", "Huh?",  "false" ],
+			"c2": [ "d_0_2", "Go on",  "false" ]
+		},
+		"r_0_1":
+		{
+			"c0": [ "exit", "Oh Neat!",  "false" ],
+			"c1": [ "exit", "How Enlightening",  "false" ],
+			"c2": [ "exit", "Was it worth the pain?",  "false" ]
+		}
+	}
+}

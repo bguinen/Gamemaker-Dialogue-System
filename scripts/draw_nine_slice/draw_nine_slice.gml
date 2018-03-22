@@ -1,3 +1,4 @@
+///@description Creates border box from sprite around text
 ///@param sprite
 ///@param start_x
 ///@param start_y
@@ -10,6 +11,11 @@ var y1 = argument2;
 var x2 = argument3;
 var y2 = argument4;
 
+/*
+Shoutout to heartbeast for this 
+please check his youtube channel for tons of cool GMS stuff
+https://www.youtube.com/user/uheartbeast/videos
+*/
 var slice_width = sprite_get_width(sprite)/3;
 var slice_height = sprite_get_height(sprite)/3;
 
@@ -33,5 +39,3 @@ draw_sprite_part_ext(sprite, 0, slice_width*2, slice_height, slice_width, slice_
 draw_sprite_part_ext(sprite, 0, 0, slice_height*2, slice_width, slice_height*2, x1, y2-slice_height, 1, 1, c_white, 1); // Left
 draw_sprite_part_ext(sprite, 0, slice_width, slice_height*2, slice_width, slice_height, x1+slice_width, y2-slice_height, (width-slice_width*2)/slice_width, 1, c_white, 1); // Middle
 draw_sprite_part_ext(sprite, 0, slice_width*2, slice_height*2, slice_width, slice_height, x2-slice_width, y2-slice_height, 1, 1, c_white, 1); // Right
-
-/*Shoutout to heartbeast for this*/
