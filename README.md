@@ -5,7 +5,7 @@
 A dialog system that uses JSON objects and Gamemaker data structures to map out dialog trees. Also features dynamic textbox creations and a simple support structure for character/interaction animations.
 
 It is also set up in a way to allow for further customization. 
-Before doing so, check out the diagrams and [Further Reading](notes/Further Reading.txt) note to make sense of the JSON file structure and how this system uses it:
+Before doing so, check out the diagrams and ![Further Reading](notes/Further%20Reading.txt) note to make sense of the JSON file structure and how this system uses it:
 
 ### Object Structure
 > Outlines the structure of one character's JSON object 
