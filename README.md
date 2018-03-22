@@ -35,7 +35,7 @@ Your new directory can be found here:
 > "%LOCALAPPDATA%/gamedir/"
 Where "gamedir" is the name of the project.
 
-Once this directory is created, copy the character's json files to it. 
+Once this directory is created, copy the [character's json files](Dialog%20JSON%20Files/) to it. 
 As this is where the system will load character files from, use this directory to store any future character.json / .ini / .dat / .bin files.
 
 ## Contact
