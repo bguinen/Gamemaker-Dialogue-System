@@ -1,8 +1,8 @@
-# Dialog System for Gamemaker Studio 2
+# Dialogue System for Gamemaker Studio 2
 
 ## Description
 
-A dialog system that uses JSON objects and Gamemaker data structures to map out dialog trees. Also features dynamic textbox creations and a simple support structure for character/interaction animations.
+A dialogue system that uses JSON objects and Gamemaker data structures to map out dialogue trees. Also features dynamic textbox creations and a simple support structure for character/interaction animations.
 
 It is also set up in a way to allow for further customization. 
 Before doing so, check out the diagrams and ![Further Reading](notes/Further%20Reading.txt) note to make sense of the JSON file structure and how this system uses it:
@@ -16,7 +16,7 @@ Before doing so, check out the diagrams and ![Further Reading](notes/Further%20R
 ![Object Structure](Diagrams/Object_Diagram.png?raw=true "Object Structure Diagram")
 
 
-### Dialog Tree Structure
+### Dialogue Tree Structure
 > A macro view of how the dialog and response objects are used
 > to navigate a "Dialog Tree". Also included some examples on 
 > how to augment this system for additional functionality.
